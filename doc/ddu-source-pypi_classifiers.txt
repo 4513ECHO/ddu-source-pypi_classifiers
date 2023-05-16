@@ -3,7 +3,7 @@
 Author: Hibiki <mail@4513echo.dev>
 License: MIT License
 URL: https://github.com/4513ECHO/ddu-source-pypi_classifiers
-Last change: 2023 Feb 27
+Last change: 2023 May 16
 
 ==============================================================================
 CONTENTS				*ddu-source-pypi_classifiers-contents*
