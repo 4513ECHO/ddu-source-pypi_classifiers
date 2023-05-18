@@ -28,12 +28,11 @@ export class Source extends BaseSource<Params, ActionData> {
       .pipeThrough(new TextLineStream())
       .pipeThrough(
         new TransformStream<string, Item<ActionData>>({
-          transform: (chunk, controller) => {
+          transform: (chunk, controller) =>
             controller.enqueue({
               word: chunk,
               action: { text: chunk },
-            });
-          },
+            }),
         }),
       )
       .pipeThrough(new ChunkedStream({ chunkSize: 100 }));
