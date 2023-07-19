@@ -1,8 +1,10 @@
-import type { ActionData } from "https://pax.deno.dev/Shougo/ddu-kind-word/denops/@ddu-kinds/word.ts";
-import type { OnInitArguments } from "https://deno.land/x/ddu_vim@v2.8.4/base/source.ts";
-import type { Item } from "https://deno.land/x/ddu_vim@v2.8.4/types.ts";
-import { BaseSource } from "https://deno.land/x/ddu_vim@v2.8.4/types.ts";
-import { TextLineStream } from "https://deno.land/std@0.187.0/streams/text_line_stream.ts";
+import type { ActionData } from "https://deno.land/x/ddu_kind_word@v0.1.2/word.ts";
+import {
+  BaseSource,
+  type OnInitArguments,
+} from "https://deno.land/x/ddu_vim@v3.4.3/base/source.ts";
+import type { Item } from "https://deno.land/x/ddu_vim@v3.4.3/types.ts";
+import { TextLineStream } from "https://deno.land/std@0.194.0/streams/text_line_stream.ts";
 import { ChunkedStream } from "https://deno.land/x/chunked_stream@0.1.2/mod.ts";
 
 type Params = Record<never, never>;
