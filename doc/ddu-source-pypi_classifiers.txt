@@ -1,12 +1,12 @@
-*ddu-source-pypi_classifiers.txt*		PyPI classifiers source for ddu.vim
+*ddu-source-pypi_classifiers.txt*          PyPI classifiers source for ddu.vim
 
 Author: Hibiki <mail@4513echo.dev>
 License: MIT License
 URL: https://github.com/4513ECHO/ddu-source-pypi_classifiers
-Last change: 2023 May 16
+Last change: 2023 Aug 28
 
 ==============================================================================
-CONTENTS				*ddu-source-pypi_classifiers-contents*
+CONTENTS                                *ddu-source-pypi_classifiers-contents*
 
 Introduction				|ddu-source-pypi_classifiers-introdution|
 Install					|ddu-source-pypi_classifiers-install|
@@ -15,14 +15,14 @@ Params					|ddu-source-pypi_classifiers-params|
 About					|ddu-source-pypi_classifiers-about|
 
 ==============================================================================
-INTRODUCTION				*ddu-source-pypi_classifiers-introdution*
+INTRODUCTION                         *ddu-source-pypi_classifiers-introdution*
 
-This source collects classifiers used by PyPI.
+*ddu-source-pypi_classifiers* is |ddu-source| collecting classifiers of PyPI.
 
 https://pypi.org/classifiers/
 
 ==============================================================================
-INSTALL					*ddu-source-pypi_classifiers-install*
+INSTALL                                  *ddu-source-pypi_classifiers-install*
 
 Please install "|ddu|.vim", "|denops.vim|" and "|ddu-kind-word|".
 
@@ -31,20 +31,19 @@ https://github.com/vim-denops/denops.vim
 https://github.com/Shougo/ddu-kind-word
 
 ==============================================================================
-EXAMPLES				*ddu-source-pypi_classifiers-examples*
+EXAMPLES                                *ddu-source-pypi_classifiers-examples*
 
 >
 	" Use pypi_classifiers source.
 	call ddu#start({ 'sources': [{ 'name': 'pypi_classifiers' }] })
-<
 
 ==============================================================================
-PARAMS					*ddu-source-pypi_classifiers-params*
+PARAMS                                    *ddu-source-pypi_classifiers-params*
 
 	UNDEFINED NOW
 
 ==============================================================================
-ABOUT					*ddu-source-pypi_classifiers-about*
+ABOUT                                      *ddu-source-pypi_classifiers-about*
 
 |ddu-source-pypi_classifiers| is developed by Hibiki(4513ECHO) and licensed
 under the MIT License. Visit the project page for the latest version:
