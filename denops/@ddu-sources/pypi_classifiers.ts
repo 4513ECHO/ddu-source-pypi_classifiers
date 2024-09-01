@@ -1,26 +1,26 @@
-import type { ActionData } from "https://deno.land/x/ddu_kind_word@v0.1.2/word.ts";
+import type { ActionData } from "jsr:@shougo/ddu-kind-word@^0.4.1";
 import {
   BaseSource,
   type OnInitArguments,
-} from "https://deno.land/x/ddu_vim@v3.6.0/base/source.ts";
-import type { Item } from "https://deno.land/x/ddu_vim@v3.6.0/types.ts";
-import { TextLineStream } from "https://deno.land/std@0.200.0/streams/text_line_stream.ts";
-import { ChunkedStream } from "https://deno.land/x/chunked_stream@0.1.2/mod.ts";
+} from "jsr:@shougo/ddu-vim@^6.0.0/source";
+import type { Item } from "jsr:@shougo/ddu-vim@^6.0.0/types";
+import { TextLineStream } from "jsr:@std/streams@^1.0.3/text-line-stream";
+import { ChunkedStream } from "jsr:@4513echo/chunked-stream@^0.2.0";
 
-type Params = Record<never, never>;
+type Params = Record<PropertyKey, never>;
 
 export class Source extends BaseSource<Params, ActionData> {
-  override kind = "word";
+  kind = "word";
   #stream?: () => ReadableStream<Item<ActionData>[]>;
 
-  override async onInit(args: OnInitArguments<Params>): Promise<void> {
+  async onInit(args: OnInitArguments<Params>): Promise<void> {
     const response = await fetch(
       "https://pypi.org/pypi?%3Aaction=list_classifiers",
     );
     if (!response.ok) {
       await args.denops.call(
         "ddu#util#print_error",
-        "Failed to fetch response",
+        `Failed to fetch response: ${response.status} ${response.statusText}`,
         "ddu-source-pypi_classifiers",
       );
       return;
@@ -41,11 +41,11 @@ export class Source extends BaseSource<Params, ActionData> {
         .pipeThrough(new ChunkedStream({ chunkSize: 100 }));
   }
 
-  override gather(_args: unknown): ReadableStream<Item<ActionData>[]> {
+  gather(): ReadableStream<Item<ActionData>[]> {
     return this.#stream!();
   }
 
-  override params(): Params {
+  params(): Params {
     return {};
   }
 }
